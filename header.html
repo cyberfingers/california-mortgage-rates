@@ -1,8 +1,7 @@
-<!-- Updated Header – Rocket Mortgage Navigation -->
 <header class="site-header">
   <div class="logo">
     <a href="https://www.rocketmortgage.com">
-      <!-- Replace logo.svg with your local logo asset -->
+      <!-- Ensure your local asset is correctly placed -->
       <img src="assets/img/logo.svg" alt="Rocket Mortgage">
     </a>
   </div>
@@ -12,7 +11,7 @@
       <li><a href="https://www.rocketmortgage.com/purchase/get-started">Buy</a></li>
       <li><a href="https://www.rocketmortgage.com/refinance">Refinance</a></li>
       <li><a href="https://www.rocketmortgage.com/mortgage-rates">Rates</a></li>
-      <li><a href="https://www.rocketmortgage.com/loan-options">Loan&nbsp;Options</a></li>
+      <li><a href="https://www.rocketmortgage.com/home-loans">Loan&nbsp;Options</a></li>
     </ul>
   </nav>
 
@@ -20,4 +19,25 @@
     <a class="sign-in" href="https://www.rocketaccount.com/login">Sign&nbsp;in</a>
     <a class="apply-btn" href="https://www.rocketmortgage.com/apply">Apply&nbsp;now</a>
   </div>
+
+  <!-- Mobile-friendly hamburger button -->
+  <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.querySelector('.primary-nav').classList.toggle('nav-open');
+    });
+  </script>
+
+  <style>
+    @media (max-width: 768px) {
+      .primary-nav        { display: none; }
+      .primary-nav.nav-open { display: block; }
+      #nav-toggle         { display: block; }
+    }
+    @media (min-width: 769px) {
+      #nav-toggle         { display: none; }
+      .primary-nav        { display: block !important; }
+    }
+  </style>
 </header>
