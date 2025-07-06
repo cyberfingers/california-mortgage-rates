@@ -1,43 +1,69 @@
+<!-- =========  HEADER  ========= -->
 <header class="site-header">
-  <div class="logo">
-    <a href="https://www.rocketmortgage.com">
-      <!-- Ensure your local asset is correctly placed -->
-      <img src="assets/img/logo.svg" alt="Rocket Mortgage">
-    </a>
+  <div class="header-inner">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="https://www.rocketmortgage.com">
+        <!-- Use your local asset or keep this external SVG -->
+        <img src="https://www.rocketmortgage.com/_next/static/media/logo.9b3d9e1d.svg"
+             alt="Rocket Mortgage" />
+      </a>
+    </div>
+
+    <!-- Primary Navigation -->
+    <nav class="primary-nav" id="main-nav">
+      <ul>
+        <li><a href="https://www.rocketmortgage.com/purchase/get-started">Buy</a></li>
+        <li><a href="https://www.rocketmortgage.com/refinance">Refinance</a></li>
+        <li><a href="https://www.rocketmortgage.com/mortgage-rates">Rates</a></li>
+        <li><a href="https://www.rocketmortgage.com/home-loans">Loan&nbsp;Options</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right‑side actions -->
+    <div class="header-actions">
+      <a class="sign-in" href="https://www.rocketaccount.com/login">Sign&nbsp;in</a>
+      <a class="apply-btn" href="https://www.rocketmortgage.com/apply">Apply&nbsp;now</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
   </div>
 
-  <nav class="primary-nav">
-    <ul>
-      <li><a href="https://www.rocketmortgage.com/purchase/get-started">Buy</a></li>
-      <li><a href="https://www.rocketmortgage.com/refinance">Refinance</a></li>
-      <li><a href="https://www.rocketmortgage.com/mortgage-rates">Rates</a></li>
-      <li><a href="https://www.rocketmortgage.com/home-loans">Loan&nbsp;Options</a></li>
-    </ul>
-  </nav>
-
-  <div class="header-actions">
-    <a class="sign-in" href="https://www.rocketaccount.com/login">Sign&nbsp;in</a>
-    <a class="apply-btn" href="https://www.rocketmortgage.com/apply">Apply&nbsp;now</a>
-  </div>
-
-  <!-- Mobile-friendly hamburger button -->
-  <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
-
+  <!-- Inline JS: simple toggle -->
   <script>
     document.getElementById('nav-toggle').addEventListener('click', () => {
-      document.querySelector('.primary-nav').classList.toggle('nav-open');
+      document.getElementById('main-nav').classList.toggle('open');
     });
   </script>
 
+  <!-- Inline CSS (keeps look close to Rocket Mortgage) -->
   <style>
-    @media (max-width: 768px) {
-      .primary-nav        { display: none; }
-      .primary-nav.nav-open { display: block; }
-      #nav-toggle         { display: block; }
-    }
-    @media (min-width: 769px) {
-      #nav-toggle         { display: none; }
-      .primary-nav        { display: block !important; }
+    /* --- Layout --- */
+    .site-header { background:#fff; border-bottom:1px solid #e5e5e5; font-family:Arial,Helvetica,sans-serif; }
+    .header-inner { max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; }
+    .logo img { height:32px; }
+
+    /* --- Nav --- */
+    .primary-nav ul { display:flex; gap:20px; margin:0; padding:0; list-style:none; }
+    .primary-nav a { color:#000; text-decoration:none; font-weight:600; }
+    .primary-nav a:hover { text-decoration:underline; }
+
+    /* --- Actions --- */
+    .header-actions { display:flex; gap:15px; align-items:center; }
+    .sign-in { color:#000; text-decoration:none; }
+    .sign-in:hover { text-decoration:underline; }
+    .apply-btn { background:#d40000; color:#fff; padding:8px 16px; border-radius:4px; text-decoration:none; font-weight:600; }
+    .apply-btn:hover { background:#b00000; }
+
+    /* --- Mobile --- */
+    .nav-toggle { display:none; font-size:24px; background:none; border:none; cursor:pointer; }
+    @media (max-width:768px) {
+      .primary-nav { position:absolute; top:60px; left:0; right:0; background:#fff; border-top:1px solid #e5e5e5; display:none; padding:20px 0; }
+      .primary-nav.open { display:block; }
+      .primary-nav ul { flex-direction:column; align-items:center; gap:15px; }
+      .header-actions .apply-btn { display:none; }  /* Hide big red button on small screens */
+      .nav-toggle { display:block; }
     }
   </style>
 </header>
