@@ -1,0 +1,204 @@
+
+
+@font-face {
+    font-family: wntlText;
+    src: url(https://www.rocketmortgage.com/nsassets/fonts/wntl/WNTL_Text_Web_Regular.woff2) format("woff2");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: wntlText;
+    src: url(https://www.rocketmortgage.com/nsassets/fonts/wntl/WNTL_Text_Web_Medium.woff2) format("woff2");
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal
+}
+
+[data-sierra-chat-container]::part(chat-corner-container),
+[data-sierra-chat-launcher]::part(launcher) {
+    bottom: var(--sierra-rocket-chat-bottom, 16px);
+    right: var(--sierra-rocket-chat-right, 16px);
+}
+
+[data-sierra-chat-launcher]::part(launcher) {
+    padding: 7.5px 26px 7.5px 8px;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.18);
+    font-weight: 500;
+}
+
+[data-sierra-chat-container]::part(chat-corner-container) {
+    border-radius: 24px;
+    box-shadow: 0 10px 30px #0000002e;
+}
+
+[data-sierra-chat-container]::part(chat) {
+   border-radius: 24px;
+}
+
+[data-sierra-launchpad-container]::part(chat) {
+    border-radius: 24px;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar) {
+    border-bottom: 1px solid rgba(0,0,0,.1019607843);
+    box-shadow: 0 0 8px #00000014;
+    border-radius: 24px 24px 0 0;
+    padding: 16px 24px;
+    height: 76px;
+    flex-direction: row;
+    align-items: center;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-content) {
+    flex-grow: 1;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar):before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+    background-image: url(https://rocket-assist-chat.rocketmortgage.com/lib/assets/ra_icon.svg);
+    background-size: 44px 44px;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-logo) {
+    display: none;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-text) {
+    color: #111;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-button) {
+    background: #f7f7f7;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-button):disabled {
+    cursor: default;
+    opacity: 0.3;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-button-actions) {
+    order: 2;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-button-close) {
+    order: 1;
+}
+
+[data-sierra-chat-container]::part(chat-title-bar-button-icon) {
+    width: 164x;
+    height: 14px;
+    fill: #1c1b1a;
+}
+
+[data-sierra-chat-container]::part(chat-body) {
+    top: 76px;
+}
+
+[data-sierra-launchpad-container]::part(chat-body) {
+    top: 0;
+}
+
+[data-sierra-chat-container]::part(chat-messages) {
+    padding: 16px 24px;
+}
+
+[data-sierra-chat-container]::part(chat-disclosure) {
+    text-align: center;
+    font-size: 12px;
+    color: #545454;
+    opacity: 1;
+}
+
+[data-sierra-launchpad-container]::part(chat-disclosure) {
+    max-width: 320px;
+    margin: 0 auto;
+    background-image: url(https://www.rocketmortgage.com/handoff/assets/Duplex-House.svg);
+    background-size: 281px 131px;
+    background-repeat: no-repeat;
+    background-position: center 41px;
+    
+    padding-top: calc(41px + 131px + 24px);
+}
+
+[data-sierra-chat-container]::part(chat-disclosure-heading) {
+    color: #111;
+}
+
+[data-sierra-chat-container]::part(chat-disclosure-link) {
+    text-decoration: underline;
+    color: #111;
+}
+
+[data-sierra-chat-container]::part(chat-bubble) {
+    border-radius: 12px;
+    max-width: 80vw;
+}
+
+
+@media (min-width: 441px) {
+    [data-sierra-chat-container]::part(chat-bubble) {
+        max-width: 300px;
+    }
+
+    [data-sierra-launchpad-container]::part(chat-bubble) {
+        max-width: 500px;
+    }
+}
+
+[data-sierra-chat-container]::part(chat-bubble-assistant) {
+    border-bottom-left-radius: 4px;
+}
+
+[data-sierra-chat-container]::part(chat-bubble-user) {
+    border-bottom-right-radius: 4px;
+}
+
+[data-sierra-chat-container]::part(chat-input) {
+    border-radius: 30px;
+    background-color: #f7f7f7;
+    margin-left: 24px;
+}
+
+[data-sierra-chat-container]::part(chat-send-button) {
+    background-image: url(https://rocket-assist-chat.rocketmortgage.com/lib/assets/send_btn_black.svg);
+    background-size: 60px 46px;
+    width: 60px;
+    height: 46px;
+    margin-right: 11px;
+}
+
+[data-sierra-chat-container]::part(chat-send-button):disabled {
+    background-image: url(https://rocket-assist-chat.rocketmortgage.com/lib/assets/send_btn_grey.svg);
+}
+
+[data-sierra-chat-container]::part(chat-ended-message) {
+    background: #f2f2f2;
+    border-radius: 30px;
+    text-align: center;
+    padding: 8px;
+}
+
+[data-sierra-chat-container]::part(chat-new-button) {
+    background: #000;
+    color: #fff;
+    padding: 16px;
+    border-radius: 30px;
+    text-align: center;
+}

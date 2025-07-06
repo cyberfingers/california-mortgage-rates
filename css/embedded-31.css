@@ -1,0 +1,105 @@
+
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-ExtraLight.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 200;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-ExtraLightItalic.woff2") format("woff2");
+      font-style: italic;
+      font-weight: 200;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-Regular.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-Italic.woff2") format("woff2");
+      font-style: italic;
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-500.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-500Italic.woff2") format("woff2");
+      font-style: italic;
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-SemiBold.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-SemiBoldItalic.woff2") format("woff2");
+      font-style: italic;
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-Bold.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/SourceSansPro-BoldItalic.woff2") format("woff2");
+      font-style: italic;
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "TrustArc";
+      src: url("https://form-renderer.trustarc.com/browser/fonts/TrustArc.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+    }
+    .ta {
+      display: inline-block;
+      font: normal normal normal 14px/1 TrustArc;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .ta-fullscreen:before { content: "\e003"; }
+    .ta-edit:before { content: "\e004"; }
+    .ta-filter:before { content: "\e005"; }
+    .ta-upload:before { content: "\e006"; }
+    .ta-undo:before { content: "\e007"; }
+    .ta-redo:before { content: "\e008"; }
+    .ta-warning:before { content: "\e009"; }
+    .ta-check:before { content: "\e010"; }
+    .ta-plus:before { content: "\e011"; }
+    .ta-minus:before { content: "\e012"; }
+    .ta-hand:before { content: "\e013"; }
+    .ta-trash:before { content: "\e014"; }
+    .ta-close:before { content: "\e015"; }
+    .ta-warning-triangle:before { content: "\e016"; }
+    .ta-check-circle:before { content: "\e017"; }
+    .ta-bell-circle:before { content: "\e018"; }
+    .ta-info-circle:before { content: "ⓘ"; }
+    .ta-tiles:before { content: "\e019"; }
+    .ta-warning-circle-outline:before { content: "\e01f"; }
+    .ta-warning-circle:before { content: "\e020"; }
+    .ta-download:before { content: "\e021"; }
+    .ta-question-circle:before { content: "\e023"; }
+    .ta-chevron-down:before { content: "\e025"; }
+    .ta-chevron-up:before { content: "\e026"; }
+    .ta-chevron-right:before { content: "\e027"; }
+    .ta-chevron-left:before { content: "\e028"; }
+    .ta-ellipsis:before { content: "⋯"; }
+    .ta-bell:before { content: "\e031"; }
+    .ta-print:before { content: "\e030"; }
+  
