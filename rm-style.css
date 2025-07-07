@@ -1,0 +1,61 @@
+/* ===========  BASIC RESET  ============ */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.4; }
+
+/* ===========  HEADER  ============ */
+.rm-header { border-bottom: 1px solid #eee; }
+.rm-header .rm-container {
+  max-width: 1280px; margin: 0 auto; padding: 0 1rem;
+  display: flex; align-items: center; height: 72px;
+}
+.rm-logo img { height: 28px; }
+.rm-nav { margin-left: 2rem; }
+.rm-nav ul { list-style: none; display: flex; gap: 1.25rem; }
+.rm-nav a { text-decoration: none; color: #000; font-weight: 500; }
+.rm-actions { margin-left: auto; display: flex; align-items: center; gap: 1rem; }
+.rm-actions .btn-primary {
+  background: #000; color: #fff; padding: 0.5rem 1rem; border-radius: 32px;
+  text-decoration: none; font-weight: 600; font-size: 0.9rem;
+}
+.rm-phone { color: #000; font-weight: 500; text-decoration: none; }
+.rm-hamburger { display: none; background: none; border: 0; width: 24px; height: 24px; position: relative; }
+.rm-hamburger::before,
+.rm-hamburger::after,
+.rm-hamburger span {
+  content: ""; position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: transform .3s;
+}
+.rm-hamburger::before { top: 0; }
+.rm-hamburger::after  { bottom: 0; }
+.rm-hamburger span    { top: 50%; transform: translateY(-50%); }
+
+/* open state */
+.rm-hamburger.open::before { transform: translateY(11px) rotate(45deg); }
+.rm-hamburger.open::after  { transform: translateY(-11px) rotate(-45deg); }
+.rm-hamburger.open span    { opacity: 0; }
+
+/* mobile */
+@media (max-width: 900px) {
+  .rm-nav { position: fixed; inset: 0 0 0 auto; width: 260px; background: #fff;
+            transform: translateX(100%); transition: transform .3s; padding: 4rem 1.5rem; }
+  .rm-nav.open { transform: translateX(0); }
+  .rm-nav ul { flex-direction: column; gap: 1.5rem; }
+  .rm-hamburger { display: block; }
+}
+
+/* ===========  FOOTER  ============ */
+.rm-footer { background: #111; color: #fff; padding: 2rem 0; font-size: 0.875rem; }
+.rm-footer .rm-container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+.rm-social { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.rm-social a { width: 28px; height: 28px; display: inline-block; }
+.rm-social svg { fill: #fff; width: 100%; height: 100%; }
+
+/* J.D. Power accordion */
+.rm-disclaimer-toggle { background: none; border: 0; color: #fff; font-weight: 600;
+                        display: flex; align-items: center; gap: .5rem; cursor: pointer; }
+.rm-caret { width: 10px; height: 10px; border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+           transform: rotate(45deg); transition: transform .3s; }
+.rm-disclaimer-toggle[aria-expanded="true"] .rm-caret { transform: rotate(225deg); }
+.rm-disclaimer-text { margin-top: .75rem; max-width: 600px; }
+@media (max-width: 600px) { .rm-disclaimer-text { font-size: 0.8rem; } }

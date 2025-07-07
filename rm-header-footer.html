@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rocket Mortgage header/footer demo</title>
+  <link rel="stylesheet" href="rm-style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="rm-header">
+    <div class="rm-container">
+      <a href="/" class="rm-logo">
+        <img src="https://www.rocketmortgage.com/content/dam/public-site/images/logos/rocket-mortgage-logo.svg"
+             alt="Rocket Mortgage">
+      </a>
+
+      <nav class="rm-nav" aria-label="Main">
+        <ul>
+          <li><a href="#">Buy</a></li>
+          <li><a href="#">Refinance</a></li>
+          <li><a href="#">Rates</a></li>
+          <li><a href="#">Loan options</a></li>
+        </ul>
+      </nav>
+
+      <div class="rm-actions">
+        <a class="rm-phone" href="tel:8884528179">(888) 452‑8179</a>
+        <a class="rm-signin" href="#">Sign in</a>
+        <a class="btn-primary" href="#">Apply now</a>
+
+        <!-- mobile hamburger -->
+        <button class="rm-hamburger" aria-label="Menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding:4rem 1rem; max-width:800px; margin:auto;">
+    <h1>Demo page</h1>
+    <p>This is only here to show the header and footer in action.</p>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="rm-footer">
+    <div class="rm-container">
+
+      <!-- Social -->
+      <div class="rm-social">
+        <a href="https://www.facebook.com/RocketMortgage" target="_blank" rel="noopener">
+          <svg><use href="#icon-facebook"/></svg>
+        </a>
+        <a href="https://twitter.com/RocketMortgage" target="_blank" rel="noopener">
+          <svg><use href="#icon-twitter"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/rocketmortgage/" target="_blank" rel="noopener">
+          <svg><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="https://www.instagram.com/rocketmortgage/" target="_blank" rel="noopener">
+          <svg><use href="#icon-instagram"/></svg>
+        </a>
+      </div>
+
+      <!-- JD Power accordion -->
+      <div class="rm-disclaimer">
+        <button class="rm-disclaimer-toggle" aria-expanded="false">
+          J.D. Power disclaimer <span class="rm-caret"></span>
+        </button>
+        <p class="rm-disclaimer-text">
+          Rocket Mortgage has won more awards than any other brand in the J.D. Power U.S. Mortgage Servicer
+          Satisfaction Studies between 2002 – 2024. Visit <a href="https://www.jdpower.com/awards" target="_blank" style="color:#fff;text-decoration:underline;">jdpower.com/awards</a> for more information.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SVG sprite (social icons) -->
+  <div style="display:none">
+    <!-- paste contents of icons.svg here OR reference with <object> -->
+    <!-- For demo we inline: -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+      <use href="icons.svg#icon-facebook"/>
+    </svg>
+  </div>
+
+  <script src="rm-script.js"></script>
+</body>
+</html>
