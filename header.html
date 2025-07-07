@@ -1,105 +1,21 @@
-<header class="rkt-Masthead globalNav">
-  <div class="rkt-Masthead__branding rkt-Stack__item--center-column">
-    <a href="https://www.rocketmortgage.com" class="rkt-Link--simple">
-      <img loading="lazy" src="https://prod.rockmedialibrary.com/api/public/content/R4M-RocketMortgageLogoStacked?v=81fe94e4" alt="Rocket Mortgage Logo" width="140">
+<header class="rm-header">
+  <div class="rm-container">
+    <a href="/" class="rm-logo">
+      <img src="https://www.rocketmortgage.com/content/dam/public-site/images/logos/rocket-mortgage-logo.svg" alt="Rocket Mortgage">
     </a>
+    <nav class="rm-nav" aria-label="Main">
+      <ul>
+        <li><a href="#">Buy</a></li>
+        <li><a href="#">Refinance</a></li>
+        <li><a href="#">Rates</a></li>
+        <li><a href="#">Loan options</a></li>
+      </ul>
+    </nav>
+    <div class="rm-actions">
+      <a class="rm-phone" href="tel:8884528179">(888) 452‑8179</a>
+      <a class="rm-signin" href="#">Sign in</a>
+      <a class="btn-primary" href="#">Apply now</a>
+      <button class="rm-hamburger" aria-label="Menu"><span></span></button>
+    </div>
   </div>
-
-  <button id="nav-toggle" aria-label="Toggle Navigation" class="rkt-Masthead__collapsible-nav-button">
-    ☰
-  </button>
-
-  <nav id="nav-items" class="rkt-Masthead__nav-items">
-    <ul class="rkt-Masthead__site-links">
-      <li><a href="https://www.rocketmortgage.com/purchase/get-started">Buy</a></li>
-      <li><a href="https://www.rocketmortgage.com/refinance/get-started">Refinance</a></li>
-      <li><a href="https://www.rocketmortgage.com/mortgage-rates">Rates</a></li>
-      <li><a href="https://www.rocketmortgage.com/home-loans">Loan Options</a></li>
-      <li><a href="https://www.rocketmortgage.com/calculators">Calculators</a></li>
-    </ul>
-    <ul class="rkt-Masthead__utility-links">
-      <li><a href="tel:8884528179">(888) 452-8179</a></li>
-      <li><a href="https://www.rocketmortgage.com/pre-sign">Sign In</a></li>
-      <li><a href="https://www.rocketmortgage.com/apply" class="rkt-apply-btn">Apply Now</a></li>
-    </ul>
-  </nav>
-
-  <script>
-    document.getElementById('nav-toggle').onclick = () => {
-      document.getElementById('nav-items').classList.toggle('nav-open');
-    };
-  </script>
-
-  <style>
-    .rkt-Masthead {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0,0,0,.1);
-      position: relative;
-    }
-    .rkt-Masthead__nav-items {
-      display: flex;
-      align-items: center;
-    }
-    .rkt-Masthead__site-links, .rkt-Masthead__utility-links {
-      list-style: none;
-      padding: 0;
-      margin: 0 10px;
-      display: flex;
-      gap: 15px;
-    }
-    .rkt-Masthead__site-links a, .rkt-Masthead__utility-links a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 600;
-    }
-    .rkt-apply-btn {
-      border: 1px solid #006aff;
-      padding: 8px 12px;
-      border-radius: 4px;
-      color: #006aff;
-    }
-    .rkt-apply-btn:hover {
-      background-color: #006aff;
-      color: #fff;
-    }
-    #nav-toggle {
-      display: none;
-      font-size: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
-
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      #nav-items {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #fff;
-        width: 100%;
-        box-shadow: 0 4px 6px rgba(0,0,0,.1);
-        padding: 10px 0;
-      }
-      #nav-items.nav-open {
-        display: flex;
-      }
-      .rkt-Masthead__site-links, .rkt-Masthead__utility-links {
-        flex-direction: column;
-        gap: 10px;
-      }
-      #nav-toggle {
-        display: block;
-      }
-    }
-  </style>
 </header>
