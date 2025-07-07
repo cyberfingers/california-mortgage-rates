@@ -90,8 +90,18 @@
     <small>Today's 30 year fixed mortgage rates</small>
   </div>
   <p class="mt-3">
-    As of Tuesday, June 17, 2025, Rocket Mortgage's 30-year fixed mortgage rate in California is 7.25%, with an APR of 7.518%.
-  </p>
+  As of <span id="currentDate"></span>, Rocket Mortgage's 30-year fixed mortgage rate in California is 7.25%, with an APR of 7.518%.
+</p>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const dateSpan = document.getElementById("currentDate");
+    const date = new Date();
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateSpan.textContent = date.toLocaleDateString('en-US', options);
+  });
+</script>
 </section>
 
 <!-- Current rates table with disclaimer -->
