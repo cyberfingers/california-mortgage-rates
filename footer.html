@@ -1,95 +1,134 @@
 <footer class="rkt-GlobalFooter" style="background-color:#000; padding:20px;">
   <style>
-    .rkt-GlobalFooter, .rkt-GlobalFooter p, .rkt-GlobalFooter__section-heading, .rkt-GlobalFooter__body-text, .rkt-GlobalFooter a, .rkt-Caption-12 {
+    /* Explicit color fixes for footer visibility */
+    .rkt-GlobalFooter,
+    .rkt-GlobalFooter * {
       color: #FFFFFF !important;
     }
+
     .rkt-GlobalFooter a {
       text-decoration: none;
     }
+
     .rkt-GlobalFooter a:hover {
-      text-decoration: underline;
+      text-decoration: underline !important;
     }
+
     .social-icons img {
       width: 24px;
       margin-right: 10px;
       vertical-align: middle;
     }
+
+    /* Preserve layout explicitly */
+    .rkt-GlobalFooter ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rkt-GlobalFooter li {
+      margin-bottom: 15px;
+    }
+
+    .rkt-GlobalFooter__section-heading {
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 768px) {
+      .footer-columns {
+        flex-direction: column;
+      }
+    }
   </style>
 
-  <section class="rocket-family">
-    <ul style="list-style:none; padding:0;">
-      <li>
-        <a href="https://rocket.com/homes">Rocket Homes</a>
-        <p>Get a real estate agent handpicked for you and search the latest home listings.</p>
-      </li>
-      <li>
-        <a href="https://www.rocketmortgage.com">Rocket Mortgage</a>
-        <p>Buy a home, refinance or manage your mortgage online with America's largest retail mortgage lender.*</p>
-      </li>
-      <li>
-        <a href="https://www.rocketmoney.com">Rocket Money</a>
-        <p>Save more, spend less, and take back control of your financial life.</p>
-      </li>
-      <li>
-        <a href="https://www.rocketcard.com">Rocket Card</a>
-        <p>Earn up to 5% cash back in mortgage savings.</p>
-      </li>
-      <li>
-        <a href="https://www.rocketloans.com">Rocket Loans</a>
-        <p>Get personal loans to consolidate debt and more.</p>
-      </li>
-      <li>
-        <a href="https://www.rocketpro.com">Rocket Pro</a>
-        <p>Build and grow your wholesale lending business.</p>
-      </li>
-      <li>
-        <a href="https://www.rocketclose.com">Rocket Close</a>
-        <p>Appraisal, title, and closing solutions for Rocket clients.</p>
-      </li>
-    </ul>
-  </section>
+  <div class="footer-columns">
+    <section class="rocket-family">
+      <div class="rkt-GlobalFooter__section-heading">Rocket Family</div>
+      <ul>
+        <li>
+          <a href="https://rocket.com/homes">Rocket Homes</a>
+          <p>Get a real estate agent handpicked for you and search the latest home listings.</p>
+        </li>
+        <li>
+          <a href="https://www.rocketmortgage.com">Rocket Mortgage</a>
+          <p>Buy a home, refinance or manage your mortgage online with America's largest retail mortgage lender.*</p>
+        </li>
+        <li>
+          <a href="https://www.rocketmoney.com">Rocket Money</a>
+          <p>Save more, spend less, and take back control of your financial life.</p>
+        </li>
+        <li>
+          <a href="https://www.rocketcard.com">Rocket Card</a>
+          <p>Earn up to 5% cash back in mortgage savings.</p>
+        </li>
+        <li>
+          <a href="https://www.rocketloans.com">Rocket Loans</a>
+          <p>Personal loans to consolidate debt, renovate your home, and more.</p>
+        </li>
+        <li>
+          <a href="https://www.rocketpro.com">Rocket Pro</a>
+          <p>Grow your wholesale lending business.</p>
+        </li>
+        <li>
+          <a href="https://www.rocketclose.com">Rocket Close</a>
+          <p>Appraisal, title, and closing solutions for Rocket clients.</p>
+        </li>
+      </ul>
+    </section>
 
-  <section class="footer-navigation">
-    <div class="rkt-GlobalFooter__section-heading">Rocket Mortgage</div>
-    <ul style="list-style:none; padding:0;">
-      <li><a href="https://www.rocketmortgage.com/purchase/get-started">Buy a home</a></li>
-      <li><a href="https://www.rocketmortgage.com/refinance/get-started">Refinance</a></li>
-      <li><a href="https://www.rocketmortgage.com/mortgage-rates">Rates</a></li>
-      <li><a href="https://www.rocketmortgage.com/calculators">Calculators</a></li>
-      <li><a href="https://www.rocketmortgage.com/home-loans">Loan options</a></li>
-    </ul>
-  </section>
+    <section class="footer-navigation">
+      <div class="rkt-GlobalFooter__section-heading">Rocket Mortgage</div>
+      <ul>
+        <li><a href="https://www.rocketmortgage.com/purchase/get-started">Buy a home</a></li>
+        <li><a href="https://www.rocketmortgage.com/refinance/get-started">Refinance</a></li>
+        <li><a href="https://www.rocketmortgage.com/mortgage-rates">Rates</a></li>
+        <li><a href="https://www.rocketmortgage.com/calculators">Calculators</a></li>
+        <li><a href="https://www.rocketmortgage.com/home-loans">Loan options</a></li>
+      </ul>
+    </section>
 
-  <section class="legal-info">
-    <div class="rkt-GlobalFooter__section-heading">Legal Info</div>
-    <ul style="list-style:none; padding:0;">
-      <li><a href="https://www.rocketmortgage.com/legal/terms-of-use">Terms of use</a></li>
-      <li><a href="https://www.rocketmortgage.com/legal/disclosures-licenses">Disclosures and licenses</a></li>
-      <li><a href="https://www.rocketaccount.com/#/privacy-policy">Privacy policy</a></li>
-      <li><a href="https://www.rocketaccount.com/#/privacy-policy">Notice at collection</a></li>
-    </ul>
-  </section>
+    <section class="legal-info">
+      <div class="rkt-GlobalFooter__section-heading">Legal Info</div>
+      <ul>
+        <li><a href="https://www.rocketmortgage.com/legal/terms-of-use">Terms of use</a></li>
+        <li><a href="https://www.rocketmortgage.com/legal/disclosures-licenses">Disclosures and licenses</a></li>
+        <li><a href="https://www.rocketaccount.com/#/privacy-policy">Privacy policy</a></li>
+        <li><a href="https://www.rocketaccount.com/#/privacy-policy">Notice at collection</a></li>
+      </ul>
+    </section>
 
-  <section class="support">
-    <div class="rkt-GlobalFooter__section-heading">Support</div>
-    <ul style="list-style:none; padding:0;">
-      <li><a href="https://www.rocketmortgage.com/talk-to-us">Talk to us</a></li>
-      <li><a href="https://rocketmortgage.com/screenshare">Share your screen</a></li>
-      <li><a href="https://www.rocketmortgage.com/opt-out">Communication opt-out</a></li>
-      <li><a href="https://quicken.co1.qualtrics.com/jfe/form/SV_8rkw7oGYD5W6h3D">Give us your feedback</a></li>
-      <li><a href="https://www.rocketmortgage.com/site-accessibility">Site accessibility</a></li>
-    </ul>
-  </section>
+    <section class="support">
+      <div class="rkt-GlobalFooter__section-heading">Support</div>
+      <ul>
+        <li><a href="https://www.rocketmortgage.com/talk-to-us">Talk to us</a></li>
+        <li><a href="https://rocketmortgage.com/screenshare">Share your screen</a></li>
+        <li><a href="https://www.rocketmortgage.com/opt-out">Communication opt-out</a></li>
+        <li><a href="https://quicken.co1.qualtrics.com/jfe/form/SV_8rkw7oGYD5W6h3D">Give us your feedback</a></li>
+        <li><a href="https://www.rocketmortgage.com/site-accessibility">Site accessibility</a></li>
+      </ul>
+    </section>
 
-  <section class="social-icons">
-    <a href="https://www.youtube.com/@RocketMortgage"><img src="https://simpleicons.org/icons/youtube.svg" alt="YouTube"></a>
-    <a href="https://www.facebook.com/Rocket"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
-    <a href="https://www.instagram.com/rocketmortgage/"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
-    <a href="https://www.linkedin.com/company/rocket-mortgage/"><img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn"></a>
-  </section>
+    <section class="social-icons">
+      <div class="rkt-GlobalFooter__section-heading">Connect With Us</div>
+      <a href="https://www.youtube.com/@RocketMortgage"><img src="https://simpleicons.org/icons/youtube.svg" alt="YouTube"></a>
+      <a href="https://www.facebook.com/Rocket"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/rocketmortgage/"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/company/rocket-mortgage/"><img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn"></a>
+    </section>
+  </div>
 
-  <section class="disclaimer">
-    <p style="font-size: 12px;">
+  <section class="disclaimer" style="margin-top: 20px;">
+    <p style="font-size: 12px; color: #fff;">
       *Based on Rocket Mortgage site data in comparison to public data records. Rocket Mortgage, 1050 Woodward Ave., Detroit, MI 48226-1906 NMLS #3030. Visit the Rocket Mortgage <a href="http://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/3030">NMLS consumer access page</a>. ©2000-2025 Rocket Mortgage, LLC. All rights reserved. Lending services provided by Rocket Mortgage, LLC.
     </p>
   </section>
