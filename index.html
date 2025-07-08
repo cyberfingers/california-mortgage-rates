@@ -1,48 +1,46 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>California Mortgage Rates | Rocket Mortgage</title>
-
-  <!-- All 32 CSS Files -->
-  <link rel="stylesheet" href="css/embedded-1.css">
-  <link rel="stylesheet" href="css/embedded-2.css">
-  <link rel="stylesheet" href="css/embedded-3.css">
-  <link rel="stylesheet" href="css/embedded-4.css">
-  <link rel="stylesheet" href="css/embedded-5.css">
-  <link rel="stylesheet" href="css/embedded-6.css">
-  <link rel="stylesheet" href="css/embedded-7.css">
-  <link rel="stylesheet" href="css/embedded-8.css">
-  <link rel="stylesheet" href="css/embedded-9.css">
-  <link rel="stylesheet" href="css/embedded-10.css">
-  <link rel="stylesheet" href="css/embedded-11.css">
-  <link rel="stylesheet" href="css/embedded-12.css">
-  <link rel="stylesheet" href="css/embedded-13.css">
-  <link rel="stylesheet" href="css/embedded-14.css">
-  <link rel="stylesheet" href="css/embedded-15.css">
-  <link rel="stylesheet" href="css/embedded-16.css">
-  <link rel="stylesheet" href="css/embedded-17.css">
-  <link rel="stylesheet" href="css/embedded-18.css">
-  <link rel="stylesheet" href="css/embedded-19.css">
-  <link rel="stylesheet" href="css/embedded-20.css">
-  <link rel="stylesheet" href="css/embedded-21.css">
-  <link rel="stylesheet" href="css/embedded-22.css">
-  <link rel="stylesheet" href="css/embedded-23.css">
-  <link rel="stylesheet" href="css/embedded-24.css">
-  <link rel="stylesheet" href="css/embedded-25.css">
-  <link rel="stylesheet" href="css/embedded-26.css">
-  <link rel="stylesheet" href="css/embedded-27.css">
-  <link rel="stylesheet" href="css/embedded-28.css">
-  <link rel="stylesheet" href="css/embedded-29.css">
-  <link rel="stylesheet" href="css/embedded-30.css">
-  <link rel="stylesheet" href="css/embedded-31.css">
-  <link rel="stylesheet" href="css/embedded-32.css">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>California Mortgage Rates | Rocket Mortgage</title>
+<!-- All 32 CSS Files -->
+<link href="css/embedded-1.css" rel="stylesheet"/>
+<link href="css/embedded-2.css" rel="stylesheet"/>
+<link href="css/embedded-3.css" rel="stylesheet"/>
+<link href="css/embedded-4.css" rel="stylesheet"/>
+<link href="css/embedded-5.css" rel="stylesheet"/>
+<link href="css/embedded-6.css" rel="stylesheet"/>
+<link href="css/embedded-7.css" rel="stylesheet"/>
+<link href="css/embedded-8.css" rel="stylesheet"/>
+<link href="css/embedded-9.css" rel="stylesheet"/>
+<link href="css/embedded-10.css" rel="stylesheet"/>
+<link href="css/embedded-11.css" rel="stylesheet"/>
+<link href="css/embedded-12.css" rel="stylesheet"/>
+<link href="css/embedded-13.css" rel="stylesheet"/>
+<link href="css/embedded-14.css" rel="stylesheet"/>
+<link href="css/embedded-15.css" rel="stylesheet"/>
+<link href="css/embedded-16.css" rel="stylesheet"/>
+<link href="css/embedded-17.css" rel="stylesheet"/>
+<link href="css/embedded-18.css" rel="stylesheet"/>
+<link href="css/embedded-19.css" rel="stylesheet"/>
+<link href="css/embedded-20.css" rel="stylesheet"/>
+<link href="css/embedded-21.css" rel="stylesheet"/>
+<link href="css/embedded-22.css" rel="stylesheet"/>
+<link href="css/embedded-23.css" rel="stylesheet"/>
+<link href="css/embedded-24.css" rel="stylesheet"/>
+<link href="css/embedded-25.css" rel="stylesheet"/>
+<link href="css/embedded-26.css" rel="stylesheet"/>
+<link href="css/embedded-27.css" rel="stylesheet"/>
+<link href="css/embedded-28.css" rel="stylesheet"/>
+<link href="css/embedded-29.css" rel="stylesheet"/>
+<link href="css/embedded-30.css" rel="stylesheet"/>
+<link href="css/embedded-31.css" rel="stylesheet"/>
+<link href="css/embedded-32.css" rel="stylesheet"/>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
     .breadcrumb a {
       color: #007bff;
       text-decoration: none;
@@ -59,46 +57,68 @@
     .rates-table td.points{white-space:normal;font-size:.9em;}
     .rates-table td.points .pt-cost{display:block;font-size:.85em;}
   }
-  </style>
+  
+/* === Mobile “stacked card” view for the rates table === */
+@media (max-width:600px){
+  .rates-table thead{display:none;}
+  .rates-table tr{
+    display:block;
+    margin:0 0 1rem;
+    border:1px solid #e5e5e5;
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .rates-table td{
+    display:block;
+    width:100%;
+    text-align:right;
+    padding:8px 8px 8px 50%;
+    position:relative;
+    border:none;
+  }
+  .rates-table td::before{
+    content:attr(data-label);
+    position:absolute;
+    left:8px;
+    top:8px;
+    font-weight:bold;
+    text-align:left;
+  }
+  .rates-table td + td{border-top:1px solid #f0f0f0;}
+}
+</style>
 </head>
 <body>
-
-  <!-- Header included dynamically -->
-  <div id="header"></div>
-
-  <div class="container py-4">
-
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="https://www.rocketmortgage.com">Home</a></li>
-        <li class="breadcrumb-item"><a href="https://www.rocketmortgage.com/mortgage-rates">Today's Mortgage Rates</a></li>
-        <li class="breadcrumb-item active" aria-current="page">California</li>
-      </ol>
-    </nav>
-
-    <!-- H1 Title -->
-    <h1 class=\"section-header\">Today's Mortgage Rates in California</h1>
-
+<!-- Header included dynamically -->
+<div id="header"></div>
+<div class="container py-4">
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="https://www.rocketmortgage.com">Home</a></li>
+<li class="breadcrumb-item"><a href="https://www.rocketmortgage.com/mortgage-rates">Today's Mortgage Rates</a></li>
+<li aria-current="page" class="breadcrumb-item active">California</li>
+</ol>
+</nav>
+<!-- H1 Title -->
+<h1 class='\"section-header\"'>Today's Mortgage Rates in California</h1>
 <!-- Today's rate highlight centered side by side with summary -->
 <section class="my-4 text-center">
-  <table class="table table-borderless text-center mx-auto mb-0" style="width: auto;">
-    <tbody>
-      <tr>
-        <td><strong>Rate</strong> 7.25%</td>
-        <td>|</td>
-        <td><strong>APR</strong> 7.518%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div style="margin-top: -8px;">
-    <small>Today's 30 year fixed mortgage rates</small>
-  </div>
-  <p class="mt-3">
+<table class="table table-borderless text-center mx-auto mb-0" style="width: auto;">
+<tbody>
+<tr>
+<td><strong>Rate</strong> 7.25%</td>
+<td>|</td>
+<td><strong>APR</strong> 7.518%</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: -8px;">
+<small>Today's 30 year fixed mortgage rates</small>
+</div>
+<p class="mt-3">
   As of <span id="currentDate"></span>, Rocket Mortgage's 30-year fixed mortgage rate in California is 7.25%, with an APR of 7.518%.
 </p>
-
-
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const dateSpan = document.getElementById("currentDate");
@@ -109,182 +129,171 @@
   });
 </script>
 </section>
-
 <!-- ===== START: Updated Rates Table & Disclaimers ===== -->
 <!-- High‑level disclaimer (ABOVE the table) -->
 <p class="disclaimer-top">
   Rates shown assume a $350,000 loan amount ($1,100,000 for Jumbo loans). Taxes, insurance and any HOA dues are not included; actual payment will be higher. Rates and APRs may change without notice and can vary based on credit score, loan‑to‑value, occupancy and other factors.
 </p>
-
 <table class="rates-table">
-  <thead>
-    <tr>
-      <th>Loan Type</th>
-      <th>Rate</th>
-      <th>APR</th>
-      <th>Points*</th>
-      <th>Monthly&nbsp;Payment**</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>30‑Year Fixed</td>
-      <td>7.125%</td>
-      <td>7.417%</td>
-      <td class="points"><span class="pt-val">1.875</span><br><span class="pt-cost">($6,563)</span></td>
-      <td>$2,359</td>
-    </tr>
-    <tr>
-      <td>20‑Year Fixed</td>
-      <td>7.125%</td>
-      <td>7.487%</td>
-      <td class="points"><span class="pt-val">1.75</span><br><span class="pt-cost">($6,125)</span></td>
-      <td>$2,740</td>
-    </tr>
-    <tr>
-      <td>30‑Year FHA</td>
-      <td>6.375%</td>
-      <td>7.219%</td>
-      <td class="points"><span class="pt-val">1.75</span><br><span class="pt-cost">($6,125)</span></td>
-      <td>$2,329</td>
-    </tr>
-    <tr>
-      <td>30‑Year Jumbo Fixed</td>
-      <td>6.125%</td>
-      <td>6.338%</td>
-      <td class="points"><span class="pt-val">1.75</span><br><span class="pt-cost">($19,250)</span></td>
-      <td>$6,684</td>
-    </tr>
-    <tr>
-      <td>30‑Year VA</td>
-      <td>6.490%</td>
-      <td>6.886%</td>
-      <td class="points"><span class="pt-val">1.75</span><br><span class="pt-cost">($6,125)</span></td>
-      <td>$2,210</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Loan Type</th>
+<th>Rate</th>
+<th>APR</th>
+<th>Points*</th>
+<th>Monthly Payment**</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Loan Type">30‑Year Fixed</td>
+<td data-label="Rate">7.125%</td>
+<td data-label="APR">7.417%</td>
+<td class="points" data-label="Points"><span class="pt-val">1.875</span><br/><span class="pt-cost">($6,563)</span></td>
+<td data-label="Monthly Payment">$2,359</td>
+</tr>
+<tr>
+<td data-label="Loan Type">20‑Year Fixed</td>
+<td data-label="Rate">7.125%</td>
+<td data-label="APR">7.487%</td>
+<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+<td data-label="Monthly Payment">$2,740</td>
+</tr>
+<tr>
+<td data-label="Loan Type">30‑Year FHA</td>
+<td data-label="Rate">6.375%</td>
+<td data-label="APR">7.219%</td>
+<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+<td data-label="Monthly Payment">$2,329</td>
+</tr>
+<tr>
+<td data-label="Loan Type">30‑Year Jumbo Fixed</td>
+<td data-label="Rate">6.125%</td>
+<td data-label="APR">6.338%</td>
+<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($19,250)</span></td>
+<td data-label="Monthly Payment">$6,684</td>
+</tr>
+<tr>
+<td data-label="Loan Type">30‑Year VA</td>
+<td data-label="Rate">6.490%</td>
+<td data-label="APR">6.886%</td>
+<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+<td data-label="Monthly Payment">$2,210</td>
+</tr>
+</tbody>
 </table>
-
 <!-- Detailed footnotes (BELOW the table) -->
 <p class="disclaimer-bottom">
-  *Points represent the upfront cost to buy down the rate; dollar amounts are based on the loan size assumptions above.<br>
-  **Monthly payment examples assume a $350,000 loan amount (or $1,000,000 for Jumbo). Taxes, insurance and HOA dues are not included. Rates and costs are current as of July&nbsp;8,&nbsp;2025 and may change without notice. All loans are subject to credit approval.
+  *Points represent the upfront cost to buy down the rate; dollar amounts are based on the loan size assumptions above.<br/>
+  **Monthly payment examples assume a $350,000 loan amount (or $1,000,000 for Jumbo). Taxes, insurance and HOA dues are not included. Rates and costs are current as of July 8, 2025 and may change without notice. All loans are subject to credit approval.
 </p>
 <!-- ===== END: Updated Rates Table & Disclaimers ===== -->
-
-
 <!-- Specific Loan Programs -->
 <section>
-  <h2 class="section-header">Mortgage Options Specific to California</h2>
-  <ul>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/30-year-mortgage">California 30-Year Fixed</a>:</strong>
+<h2 class="section-header">Mortgage Options Specific to California</h2>
+<ul>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/30-year-mortgage">California 30-Year Fixed</a>:</strong>
 The most popular loan for buying and refinancing, offering lower monthly payments and the option to buy with as little as 3% down.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/15-year-mortgage">California 15-Year Fixed</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/15-year-mortgage">California 15-Year Fixed</a>:</strong>
 Provides faster payoff and less interest paid over the life of the loan, with as little as 5% down for home purchases.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/mortgage-rates/fha-loan-rates">California FHA Loan</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/mortgage-rates/fha-loan-rates">California FHA Loan</a>:</strong>
 Flexible loans with lower down payments ideal for first-time California homebuyers.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/jumbo-loan">California Jumbo Loans</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/jumbo-loan">California Jumbo Loans</a>:</strong>
 Financing solutions for higher-value homes prevalent in California.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/va-loan">California VA Loans</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/va-loan">California VA Loans</a>:</strong>
 Zero-down mortgage solutions for eligible veterans and service members in California.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/adjustable-rate-mortgage">California Adjustable-Rate Mortgage (ARM)</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/adjustable-rate-mortgage">California Adjustable-Rate Mortgage (ARM)</a>:</strong>
 Starts with a fixed interest rate for 5, 7, or 10 years, then adjusts every 6 months, often at a lower initial rate.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/home-equity-loan">California Home Equity Loan</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/home-equity-loan">California Home Equity Loan</a>:</strong>
 Borrow a lump sum from your home's equity at a fixed interest rate with predictable monthly payments, without refinancing.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/one-plus">California ONE+ by Rocket Mortgage</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/one-plus">California ONE+ by Rocket Mortgage</a>:</strong>
 Designed to make home buying more affordable, this program allows you to purchase with just 1% down, and Rocket Mortgage covers an additional 2%.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/home-loans/homeready-and-home-possible">California HomeReady® and Home Possible®</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/home-loans/homeready-and-home-possible">California HomeReady® and Home Possible®</a>:</strong>
 Affordable loan options with just 3% down and reduced mortgage insurance for qualified buyers.
     </li>
-  </ul>
+</ul>
 </section>
-
-
-    <!-- State-Specific Resources -->
-    <section>
-      <h2 class="section-header">Special Assistance Programs in California</h2>
-      <ul>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/learn/home-loans-for-teachers">California Public Servant Mortgage Programs</a>:</strong>
+<!-- State-Specific Resources -->
+<section>
+<h2 class="section-header">Special Assistance Programs in California</h2>
+<ul>
+<li>
+<strong><a href="https://www.rocketmortgage.com/learn/home-loans-for-teachers">California Public Servant Mortgage Programs</a>:</strong>
 Mortgage programs designed specifically for California's educators, first responders, healthcare workers, and public servants, offering favorable loan conditions.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/down-payment-assistance">California Down Payment Assistance</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/down-payment-assistance">California Down Payment Assistance</a>:</strong>
 Rocket Mortgage accepts many down payment assistance programs to help make homeownership more accessible for qualified buyers.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/rent-rewards">California RentRewards</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/rent-rewards">California RentRewards</a>:</strong>
 Eligible renters may save up to $5,000 in closing costs when buying a home with Rocket Mortgage.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/learn/native-american-home-loans">California Native American Home Loans</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/learn/native-american-home-loans">California Native American Home Loans</a>:</strong>
 Multiple loan options are available for fee simple-owned property on Native American reservations.
     </li>
-    <li>
-      <strong><a href="https://res.cloudinary.com/los-angeles-county-assessor/image/upload/v1736540235/Factsheet/Relief_for_Properties_Impacted_By_A_Disaster.pdf">Property Tax Relief OptPions for LA Fire Victims</a>:</strong>
+<li>
+<strong><a href="https://res.cloudinary.com/los-angeles-county-assessor/image/upload/v1736540235/Factsheet/Relief_for_Properties_Impacted_By_A_Disaster.pdf">Property Tax Relief OptPions for LA Fire Victims</a>:</strong>
 The Assessor's Information Packet for disaster relief for California residents.
     </li>
-   </ul>
-    </section>
-
-    <!-- State-Specific Mortgage Requirements and Services -->
-    <section>
-      <h2 class="section-header">Mortgage Requirements and Services in California</h2>
-      <ul>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/learn/escrow-waiver">Escrow Waivers (Impound Waivers)</a>:</strong>
+</ul>
+</section>
+<!-- State-Specific Mortgage Requirements and Services -->
+<section>
+<h2 class="section-header">Mortgage Requirements and Services in California</h2>
+<ul>
+<li>
+<strong><a href="https://www.rocketmortgage.com/learn/escrow-waiver">Escrow Waivers (Impound Waivers)</a>:</strong>
 Allows qualified California homeowners to directly control property tax and insurance payments, providing greater financial flexibility.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/refinance">Transparent Refinancing Costs (SB2 Fees)</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/refinance">Transparent Refinancing Costs (SB2 Fees)</a>:</strong>
 Clearly communicated refinancing recording fees adhering to California's Senate Bill 2 (SB2), ensuring transparency and compliance.
     </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/legal/disclosures-licenses">California Finance Lender Disclosure</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/legal/disclosures-licenses">California Finance Lender Disclosure</a>:</strong>
 Mandatory disclosure highlighting the role of mortgage brokers to ensure transparent and compliant lending practices according to California law.
     </li>
-    <li>
-      <strong><a href="https://lao.ca.gov/reports/2012/tax/property-tax-primer-112912.aspx">California Property Tax Estimates</a>:</strong>
+<li>
+<strong><a href="https://lao.ca.gov/reports/2012/tax/property-tax-primer-112912.aspx">California Property Tax Estimates</a>:</strong>
 Provides accurate estimations of property taxes (approximately 1.25% of the home's purchase price) including reassessment considerations, helping California homeowners plan financially.    </li>
-    <li>
-      <strong><a href="https://www.rocketmortgage.com/learn/nhd-report">California Fair Plan Insurance</a>:</strong>
+<li>
+<strong><a href="https://www.rocketmortgage.com/learn/nhd-report">California Fair Plan Insurance</a>:</strong>
 Named-peril property insurance essential for homes located in California's wildfire-prone regions, seamlessly integrated with your mortgage.
     </li>
-   </ul>
-    </section>
-
-    <!-- CTA to Blog/Learning Center -->
-    <section class="mt-5">
-      <h2 class="section-header">Learn More About Mortgage Rates</h2>
-      <ul>
-        <li><a href="https://www.rocketmortgage.com/learn/mortgage-interest-rates-forecast">Mortgage Interest Rates Forecast for 2025</a></li>
-        <li><a href="https://www.rocketmortgage.com/learn/historical-mortgage-rates">Historical Mortgage Rates: 1971 to Present</a></li>
-        <li><a href="https://www.rocketmortgage.com/learn/10-year-mortgage-rates-guide">10-Year Mortgage Rates: A Complete Guide</a></li>
-      </ul>
-    </section>
-
-  </div>
-
-  <!-- ========== CALIFORNIA COMPLIANCE & PRIVACY BLOCK ========== -->
-<section class="state-compliance" aria-label="California licensing and privacy disclosures">
-  <style>
+</ul>
+</section>
+<!-- CTA to Blog/Learning Center -->
+<section class="mt-5">
+<h2 class="section-header">Learn More About Mortgage Rates</h2>
+<ul>
+<li><a href="https://www.rocketmortgage.com/learn/mortgage-interest-rates-forecast">Mortgage Interest Rates Forecast for 2025</a></li>
+<li><a href="https://www.rocketmortgage.com/learn/historical-mortgage-rates">Historical Mortgage Rates: 1971 to Present</a></li>
+<li><a href="https://www.rocketmortgage.com/learn/10-year-mortgage-rates-guide">10-Year Mortgage Rates: A Complete Guide</a></li>
+</ul>
+</section>
+</div>
+<!-- ========== CALIFORNIA COMPLIANCE & PRIVACY BLOCK ========== -->
+<section aria-label="California licensing and privacy disclosures" class="state-compliance">
+<style>
     /* Inline styles for quick demo; move to your CSS file in production */
     .state-compliance {
       background: #f7f7f7;
@@ -295,35 +304,30 @@ Named-peril property insurance essential for homes located in California's wildf
     }
     .state-compliance a { color: #0066cc; text-decoration: underline; }
   </style>
-
-  <p>
-    <strong>California Licensing:</strong> Rocket Mortgage, LLC; NMLS ID&nbsp;#3030. 
+<p>
+<strong>California Licensing:</strong> Rocket Mortgage, LLC; NMLS ID #3030. 
     Licensed by the California Department of Financial Protection and Innovation under the 
-    California Residential Mortgage Lending Act, License&nbsp;#4130233. 
-    <a href="https://www.rocketmortgage.com/legal/disclosures-licenses" target="_blank" rel="noopener">
+    California Residential Mortgage Lending Act, License #4130233. 
+    <a href="https://www.rocketmortgage.com/legal/disclosures-licenses" rel="noopener" target="_blank">
       View all state disclosures and licenses
     </a>.
   </p>
-
-  <p>
-    <strong>California Privacy Rights:</strong> California residents may request information about how 
+<p>
+<strong>California Privacy Rights:</strong> California residents may request information about how 
     we share personal data for direct marketing purposes. Call us at 
     <a href="tel:8884447492">888‑444‑7492</a> or review our 
-    <a href="https://www.rocketcompanies.com/privacy-policy/" target="_blank" rel="noopener">
+    <a href="https://www.rocketcompanies.com/privacy-policy/" rel="noopener" target="_blank">
       Privacy Policy
     </a>.
   </p>
 </section>
 <!-- ========== END CALIFORNIA BLOCK ========== -->
-
-  <!-- Footer included dynamically -->
-  <div id="footer"></div>
-
-  <!-- JS to load header.html and footer.html -->
-  <script>
+<!-- Footer included dynamically -->
+<div id="footer"></div>
+<!-- JS to load header.html and footer.html -->
+<script>
     fetch('header.html').then(r => r.text()).then(h => {document.getElementById('header').innerHTML = h;});
     fetch('footer.html').then(r => r.text()).then(h => {document.getElementById('footer').innerHTML = h;});
   </script>
-
 </body>
 </html>
