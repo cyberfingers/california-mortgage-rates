@@ -57,7 +57,42 @@
     .rates-table td.points{white-space:normal;font-size:.9em;}
     .rates-table td.points .pt-cost{display:block;font-size:.85em;}
   }
-  
+/* Modal backdrop */
+.modal {
+  display: none;                /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* semi‑transparent black */
+}
+
+/* Modal box */
+.modal-content {
+  background: #fff;
+  margin: 6% auto;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  width: 92%;
+  max-width: 700px;
+  max-height: 82%;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.modal-content .close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  float: right;
+  cursor: pointer;
+  color: #444;
+}
+.modal-content .close:hover { color: #000; }
+
 /* === Mobile “stacked card” view for the rates table === */
 @media (max-width:600px){
   .rates-table thead{display:none;}
@@ -88,6 +123,65 @@
 }
 </style>
 </head>
+<!-- ───────────────  Modal for Legal Disclosures  ─────────────── -->
+<div id="disclosure-modal" class="modal">
+  <div class="modal-content">
+    <button class="close" aria-label="Close">&times;</button>
+
+    <h2>Legal disclosures</h2>
+    <p>Every situation is different. These figures are for estimation purposes only and may not reflect the exact terms of your loan. This is not a commitment to lend.</p>
+
+    <p><strong>30‑year Fixed‑Rate Loan:</strong> Payment assumes a loan‑to‑value (LTV) of 80.00%.</p>
+    <p><strong>20‑year Fixed‑Rate Loan:</strong> Payment assumes a loan‑to‑value (LTV) of 80.00%.</p>
+    <p><strong>30‑year FHA Fixed‑Rate Loan:</strong> Payment assumes a loan‑to‑value (LTV) of 80.00%.</p>
+
+    <p>Payment includes a one‑time upfront mortgage insurance premium at 1.75% of the base loan amount and a monthly mortgage insurance premium (MIP) calculated at 0.5% of the base loan amount. For mortgages with an LTV of 80.00%, the 0.5% monthly MIP will be paid for the first 11&nbsp;years of the mortgage term. Thereafter, the monthly loan payment will consist of equal monthly principal and interest payments until the end of the loan.</p>
+
+    <p><strong>30‑year Fixed‑Rate Jumbo Loan:</strong> Payment assumes a loan‑to‑value (LTV) of 70.00%.</p>
+    <p><strong>30‑year Fixed‑Rate VA Loan:</strong> Payment assumes a loan‑to‑value (LTV) of 80.00%.</p>
+
+    <p>VA loans do not require PMI. The VA loan is a benefit of military service and only offered to veterans, surviving spouses and active‑duty military.</p>
+
+    <h3>Assumptions</h3>
+    <ul>
+      <li>You’re buying a single‑family home that’s your primary residence.</li>
+      <li>Closing costs will be paid up front, not rolled into the loan.</li>
+      <li>Your debt‑to‑income ratio is less than 43%.</li>
+      <li>Your credit score is 740.</li>
+      <li>You’ll have an escrow account for payment of taxes and insurance.</li>
+      <li>One point is equal to one percent of the loan amount.</li>
+    </ul>
+  </div>
+</div>
+<!-- ───────────────────────────────────────────────────────────── -->
+ <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('disclosure-modal');
+  const openBtn = document.getElementById('open-disclosures');
+  const closeBtn = modal.querySelector('.close');
+
+  // Open modal
+  openBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    modal.style.display = 'block';
+  });
+
+  // Close modal (X button)
+  closeBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  // Close by clicking outside the box
+  window.addEventListener('click', function (e) {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
+  // Optional: close on Esc key
+  window.addEventListener('keyup', function (e) {
+    if (e.key === 'Escape') modal.style.display = 'none';
+  });
+});
+</script>
 <body>
 <!-- Header included dynamically -->
 <div id="header"></div>
@@ -182,6 +276,10 @@
 </tr>
 </tbody>
 </table>
+<!-- View legal disclosures (opens modal) -->
+<p style="margin-top:1rem;">
+  <a href="#" id="open-disclosures">View legal disclosures</a>
+</p>
 <!-- Detailed footnotes (BELOW the table) -->
 <p class="disclaimer-bottom">
   *Points represent the upfront cost to buy down the rate; dollar amounts are based on the loan size assumptions above.<br/>
