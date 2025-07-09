@@ -188,6 +188,37 @@
   **Monthly payment examples assume a $350,000 loan amount (or $1,000,000 for Jumbo). Taxes, insurance and HOA dues are not included. Rates and costs are current as of July 8, 2025 and may change without notice. All loans are subject to credit approval.
 </p>
 <!-- ===== END: Updated Rates Table & Disclaimers ===== -->
+<!-- Interactive Sliders Section -->
+<section class="my-5">
+  <h2 class="section-header">Customize Your Rates</h2>
+  <div class="row">
+
+    <!-- Loan Amount Slider -->
+    <div class="col-md-6 mb-4">
+      <label for="loanAmountSlider" class="form-label">Loan Amount: <span id="loanAmountValue">$350,000</span></label>
+      <input type="range" class="form-range" id="loanAmountSlider" min="50000" max="1500000" step="5000" value="350000">
+    </div>
+
+    <!-- Credit Score Slider -->
+    <div class="col-md-6 mb-4">
+      <label for="creditScoreSlider" class="form-label">Credit Score: <span id="creditScoreValue">740</span></label>
+      <input type="range" class="form-range" id="creditScoreSlider" min="580" max="850" step="10" value="740">
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.getElementById('loanAmountSlider').addEventListener('input', function() {
+    document.getElementById('loanAmountValue').textContent = "$" + parseInt(this.value).toLocaleString();
+  });
+
+  document.getElementById('creditScoreSlider').addEventListener('input', function() {
+    document.getElementById('creditScoreValue').textContent = this.value;
+  });
+</script>
+
+
 <!-- Specific Loan Programs -->
 <section>
 <h2 class="section-header">Mortgage Options Specific to California</h2>
