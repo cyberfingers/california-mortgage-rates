@@ -420,9 +420,146 @@ Named-peril property insurance essential for homes located in California's wildf
 </ul>
 </section>
 </div>
+<!-- ===================== 5‑Star Review / Trust Section ===================== -->
+<section class="reviews">
+  <!-- Left (headline) -->
+  <div class="reviews__left">
+    <h2>
+      Join our clients who give us
+      <span class="star">★★★★★</span>
+      for rates and service
+    </h2>
+  </div>
+
+  <!-- Right (rotating quotes) -->
+  <div class="reviews__right">
+    <blockquote id="review-text"></blockquote>
+    <cite id="review-author"></cite>
+
+    <div class="reviews__meta">
+      <!-- Trustpilot logo (SVG keeps it crisp) -->
+      <svg class="trustpilot" viewBox="0 0 100 20" aria-label="Trustpilot">
+        <text x="0" y="15" font-size="15" font-family="Arial, Helvetica, sans-serif">Trustpilot</text>
+      </svg>
+      <span id="review-count"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Review Rotator ===================== -->
+<script>
+  const reviews = [
+    {
+      text:
+        "Best rate by far … Fewest hoops to jump through … We shopped a bunch of lenders and they were the best!",
+      author: "Ben",
+    },
+    {
+      text:
+        "We got great, attentive service, and importantly, a very competitive rate that we were happy with.",
+      author: "Elise",
+    },
+    {
+      text:
+        "Was easy to upload documentation, I got a great rate, and am extremely happy with the service.",
+      author: "Mr. Brink",
+    },
+    {
+      text:
+        "This was my first real mortgage … the interest rate was way better than anyone else could offer and the process … was so fluid.",
+      author: "Shawn Y.",
+    },
+  ];
+
+  let idx = 0;
+  function showReview(i) {
+    const r = reviews[i];
+    document.getElementById("review-text").textContent = `“${r.text}”`;
+    document.getElementById("review-author").textContent = `- ${r.author}`;
+    document.getElementById("review-count").textContent = `${i + 1} / ${reviews.length}`;
+  }
+  showReview(idx);
+  setInterval(() => {
+    idx = (idx + 1) % reviews.length;
+    showReview(idx);
+  }, 6000); // 6‑second rotation
+</script>
+
+<!-- ===================== Styling ===================== -->
+<style>
+  .reviews {
+    display: flex;
+    margin: 3rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+  }
+
+  /* ---------- Left side (headline) ---------- */
+  .reviews__left {
+    background: #d7192d; /* Rocket‑style red */
+    color: #fff;
+    flex: 1 1 45%;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+  }
+  .reviews__left h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .star {
+    letter-spacing: 2px;
+  }
+
+  /* ---------- Right side (quotes) ---------- */
+  .reviews__right {
+    background: #fafafa;
+    flex: 1 1 55%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  blockquote {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+  }
+  cite {
+    font-style: normal;
+    font-weight: 600;
+    color: #333;
+  }
+  .reviews__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: #666;
+  }
+  .trustpilot {
+    height: 20px;
+    fill: currentColor;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    .reviews {
+      flex-direction: column;
+    }
+    .reviews__left,
+    .reviews__right {
+      flex: 1 1 auto;
+    }
+  }
+</style>
 <!-- FAQ Section -->
 <section class="mt-5">
-  <h2 class="section-header">Frequently Asked Questions (FAQs)</h2>
+  <h3 class="section-header">Frequently Asked Questions (FAQs)</h3>
 
   <div class="accordion" id="mortgageFAQs">
 
