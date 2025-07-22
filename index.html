@@ -719,6 +719,57 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Bootstrap JS (Required for Accordion) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- ===== Other State Links Section ===== -->
+<section class="mt-5">
+  <h2 class="section-header">Mortgage Rates in Other States</h2>
+  <table class="table table-borderless" id="otherStatesTable">
+    <tbody>
+      <tr>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/alabama-mortgage-rates">Alabama</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/alaska-mortgage-rates">Alaska</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/arizona-mortgage-rates">Arizona</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/arkansas-mortgage-rates">Arkansas</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/colorado-mortgage-rates">Colorado</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/connecticut-mortgage-rates">Connecticut</a></td>
+      </tr>
+      <tr class="extra-row">
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/delaware-mortgage-rates">Delaware</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/florida-mortgage-rates">Florida</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/georgia-mortgage-rates">Georgia</a></td>
+      </tr>
+      <tr class="extra-row">
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/hawaii-mortgage-rates">Hawaii</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/idaho-mortgage-rates">Idaho</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/illinois-mortgage-rates">Illinois</a></td>
+      </tr>
+      <tr class="extra-row">
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/indiana-mortgage-rates">Indiana</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/iowa-mortgage-rates">Iowa</a></td>
+        <td><a href="https://www.rocketmortgage.com/mortgage-rates/kansas-mortgage-rates">Kansas</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><a href="#" id="toggleStates">Show more</a></p>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleLink = document.getElementById('toggleStates');
+    const extraRows = document.querySelectorAll('#otherStatesTable .extra-row');
+    let expanded = false;
+    toggleLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      expanded = !expanded;
+      extraRows.forEach(row => {
+        row.style.display = expanded ? '' : 'none';
+      });
+      toggleLink.textContent = expanded ? 'Show less' : 'Show more';
+    });
+    extraRows.forEach(row => row.style.display = 'none');
+  });
+</script>
+
 <!-- ========== CALIFORNIA COMPLIANCE & PRIVACY BLOCK ========== -->
 <section aria-label="California licensing and privacy disclosures" class="state-compliance">
 <style>
