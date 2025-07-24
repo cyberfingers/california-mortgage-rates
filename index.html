@@ -183,6 +183,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <body>
+<!--
+  Implementation notes for stakeholders:
+  - The script near the FAQ section now populates the current system date in both
+    the main rate summary ("As of" statements) and the first FAQ answer. Ensure the span
+    elements with IDs 'currentDate' and 'faqCurrentDate' remain in place for this to work.
+  - Additional gauge labels ("Favorable" and "Somewhat Tight") have been added to
+    the mortgage qualification meter to enhance user understanding and support SEO/AEO.
+  - Each 'Points' cell in the rates table includes a title attribute explaining that points
+    are prepaid fees to lower the interest rate (1 point = 1% of the loan amount).
+  - The SVG representing the lending difficulty meter now has 'role' and 'aria-label'
+    attributes to improve accessibility for screen readers.
+  - Structured data (BreadcrumbList, FAQPage and FinancialProduct) is provided at the end of
+    the document to improve search visibility. Developers must update interest rates and APRs
+    in the JSON-LD when the table values change.
+  - QA should verify that dates display correctly, the tooltips appear on hover, and new
+    labels render well across devices.
+-->
 <!-- Header included dynamically -->
 <div id="header"></div>
 <div class="container py-4">
@@ -218,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <h2 class="section-header">Mortgage Qualification Difficulty in California</h2>
   <p class="mb-3">How difficult is it to qualify for a mortgage in California today?</p>
   <div style="max-width: 480px; margin: 0 auto;">
-    <svg width="100%" height="auto" viewBox="0 0 200 120">
+    <svg width="100%" height="auto" viewBox="0 0 200 120" role="img" aria-label="Mortgage qualification meter indicating the lending environment (Easy to Hard)">
       <!-- Gauge segments -->
       <path d="M20,100 A80,80 0 0,1 50,40 L40,35 A90,90 0 0,0 10,100 Z" fill="#4CAF50"/>
       <path d="M50,40 A80,80 0 0,1 90,20 L85,10 A90,90 0 0,0 40,35 Z" fill="#8BC34A"/>
@@ -260,35 +277,35 @@ document.addEventListener('DOMContentLoaded', function () {
 <td data-label="Loan Type">30‑Year Fixed</td>
 <td data-label="Rate">7.125%</td>
 <td data-label="APR">7.417%</td>
-<td class="points" data-label="Points"><span class="pt-val">1.875</span><br/><span class="pt-cost">($6,563)</span></td>
+<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.875</span><br/><span class="pt-cost">($6,563)</span></td>
 <td data-label="Monthly Payment">$2,359</td>
 </tr>
 <tr>
 <td data-label="Loan Type">20‑Year Fixed</td>
 <td data-label="Rate">7.125%</td>
 <td data-label="APR">7.487%</td>
-<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
 <td data-label="Monthly Payment">$2,740</td>
 </tr>
 <tr>
 <td data-label="Loan Type">30‑Year FHA</td>
 <td data-label="Rate">6.375%</td>
 <td data-label="APR">7.219%</td>
-<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
 <td data-label="Monthly Payment">$2,329</td>
 </tr>
 <tr>
 <td data-label="Loan Type">30‑Year Jumbo Fixed</td>
 <td data-label="Rate">6.125%</td>
 <td data-label="APR">6.338%</td>
-<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($19,250)</span></td>
+<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($19,250)</span></td>
 <td data-label="Monthly Payment">$6,684</td>
 </tr>
 <tr>
 <td data-label="Loan Type">30‑Year VA</td>
 <td data-label="Rate">6.490%</td>
 <td data-label="APR">6.886%</td>
-<td class="points" data-label="Points"><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
 <td data-label="Monthly Payment">$2,210</td>
 </tr>
 </tbody>
@@ -725,10 +742,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // Update both FAQ and main summary dates with the user's current system date
     const faqDateSpan = document.getElementById("faqCurrentDate");
+    const currentDateSpan = document.getElementById("currentDate");
     const date = new Date();
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    faqDateSpan.textContent = date.toLocaleDateString('en-US', options);
+    const formattedDate = date.toLocaleDateString('en-US', options);
+    if (faqDateSpan) {
+      faqDateSpan.textContent = formattedDate;
+    }
+    if (currentDateSpan) {
+      currentDateSpan.textContent = formattedDate;
+    }
   });
 </script>
 
@@ -823,6 +848,114 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
     fetch('header.html').then(r => r.text()).then(h => {document.getElementById('header').innerHTML = h;});
     fetch('footer.html').then(r => r.text()).then(h => {document.getElementById('footer').innerHTML = h;});
+  </script>
+
+  <!-- Structured data for breadcrumbs, FAQs and loan products -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rocketmortgage.com" },
+          { "@type": "ListItem", "position": 2, "name": "Today's Mortgage Rates", "item": "https://www.rocketmortgage.com/mortgage-rates" },
+          { "@type": "ListItem", "position": 3, "name": "California", "item": "https://www.rocketmortgage.com/mortgage-rates/california-mortgage-rates" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are today's mortgage rates in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As of Monday, July 21, 2025, Rocket Mortgage offers a 7.25% APR for a 30-year fixed-rate mortgage in California."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What’s the difference between APR and interest rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Interest rate is the annual cost of borrowing the loan principal, while APR includes both the interest rate and associated loan fees, providing a clearer picture of the total annual cost of your mortgage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are there special mortgage assistance programs available in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Programs like the California Housing Finance Agency (CalHFA) offer favorable terms and assistance specifically to California homebuyers, including down payment assistance for qualified applicants."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do California property taxes and insurance affect mortgage affordability?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "California's property taxes average about 1% of the home's assessed value but can vary significantly by county. Also, homeowners often carry additional insurance policies like earthquake and wildfire coverage, influencing your monthly mortgage payments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Jumbo loans, and are they common in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jumbo loans exceed standard loan limits set by agencies like Fannie Mae or Freddie Mac. Due to California’s higher home values, Jumbo loans are common and allow financing for higher-priced homes typically found in markets like San Francisco, Los Angeles, or San Diego."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "California Conventional Loan Products",
+        "itemListElement": [
+          {
+            "@type": "FinancialProduct",
+            "name": "California 30-Year Fixed",
+            "interestRate": "7.125%",
+            "apr": "7.417%",
+            "description": "Fixed-rate 30-year mortgage available in California",
+            "provider": { "@type": "Organization", "name": "Rocket Mortgage" }
+          },
+          {
+            "@type": "FinancialProduct",
+            "name": "California 20-Year Fixed",
+            "interestRate": "7.125%",
+            "apr": "7.487%",
+            "description": "Fixed-rate 20-year mortgage available in California",
+            "provider": { "@type": "Organization", "name": "Rocket Mortgage" }
+          },
+          {
+            "@type": "FinancialProduct",
+            "name": "California 30-Year FHA",
+            "interestRate": "6.375%",
+            "apr": "7.219%",
+            "description": "FHA loan option available in California",
+            "provider": { "@type": "Organization", "name": "Rocket Mortgage" }
+          },
+          {
+            "@type": "FinancialProduct",
+            "name": "California 30-Year Jumbo Fixed",
+            "interestRate": "6.125%",
+            "apr": "6.338%",
+            "description": "Jumbo mortgage option for high-value homes in California",
+            "provider": { "@type": "Organization", "name": "Rocket Mortgage" }
+          },
+          {
+            "@type": "FinancialProduct",
+            "name": "California 30-Year VA",
+            "interestRate": "6.490%",
+            "apr": "6.886%",
+            "description": "VA loan for eligible veterans and service members in California",
+            "provider": { "@type": "Organization", "name": "Rocket Mortgage" }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </body>
 </html>
