@@ -57,6 +57,13 @@
     .rates-table td.points{white-space:normal;font-size:.9em;}
     .rates-table td.points .pt-cost{display:block;font-size:.85em;}
   }
+
+  /* Style h3 headings inside the rates table to blend with table text */
+  .rates-table td h3 {
+    margin: 0;              /* Remove default heading margin so it aligns with table cell */
+    font-size: 1rem;        /* Set a moderate font size to match the surrounding text */
+    font-weight: 600;       /* Slightly bolder for emphasis without overpowering other data */
+  }
 /* Modal backdrop */
 .modal {
   display: none;                /* Hidden by default */
@@ -248,39 +255,39 @@ document.addEventListener('DOMContentLoaded', function () {
 </thead>
 <tbody>
 <tr>
-<td data-label="Loan Type">30‑Year Fixed</td>
-<td data-label="Rate">7.125%</td>
-<td data-label="APR">7.417%</td>
-<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.875</span><br/><span class="pt-cost">($6,563)</span></td>
-<td data-label="Monthly Payment">$2,359</td>
+  <td data-label="Loan Type"><h3>30‑Year Fixed</h3></td>
+  <td data-label="Rate">7.125%</td>
+  <td data-label="APR">7.417%</td>
+  <td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.875</span><br/><span class="pt-cost">($6,563)</span></td>
+  <td data-label="Monthly Payment">$2,359</td>
 </tr>
 <tr>
-<td data-label="Loan Type">20‑Year Fixed</td>
-<td data-label="Rate">7.125%</td>
-<td data-label="APR">7.487%</td>
-<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
-<td data-label="Monthly Payment">$2,740</td>
+  <td data-label="Loan Type"><h3>20‑Year Fixed</h3></td>
+  <td data-label="Rate">7.125%</td>
+  <td data-label="APR">7.487%</td>
+  <td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+  <td data-label="Monthly Payment">$2,740</td>
 </tr>
 <tr>
-<td data-label="Loan Type">30‑Year FHA</td>
-<td data-label="Rate">6.375%</td>
-<td data-label="APR">7.219%</td>
-<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
-<td data-label="Monthly Payment">$2,329</td>
+  <td data-label="Loan Type"><h3>30‑Year FHA</h3></td>
+  <td data-label="Rate">6.375%</td>
+  <td data-label="APR">7.219%</td>
+  <td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+  <td data-label="Monthly Payment">$2,329</td>
 </tr>
 <tr>
-<td data-label="Loan Type">30‑Year Jumbo Fixed</td>
-<td data-label="Rate">6.125%</td>
-<td data-label="APR">6.338%</td>
-<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($19,250)</span></td>
-<td data-label="Monthly Payment">$6,684</td>
+  <td data-label="Loan Type"><h3>30‑Year Jumbo Fixed</h3></td>
+  <td data-label="Rate">6.125%</td>
+  <td data-label="APR">6.338%</td>
+  <td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($19,250)</span></td>
+  <td data-label="Monthly Payment">$6,684</td>
 </tr>
 <tr>
-<td data-label="Loan Type">30‑Year VA</td>
-<td data-label="Rate">6.490%</td>
-<td data-label="APR">6.886%</td>
-<td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
-<td data-label="Monthly Payment">$2,210</td>
+  <td data-label="Loan Type"><h3>30‑Year VA</h3></td>
+  <td data-label="Rate">6.490%</td>
+  <td data-label="APR">6.886%</td>
+  <td class="points" data-label="Points" title="A point is a one-time fee you pay to lower your interest rate. One point costs 1% of your total home loan amount."><span class="pt-val">1.75</span><br/><span class="pt-cost">($6,125)</span></td>
+  <td data-label="Monthly Payment">$2,210</td>
 </tr>
 </tbody>
 </table>
